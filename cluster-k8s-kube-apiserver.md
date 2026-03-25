@@ -4,8 +4,6 @@
 💡 **비유하자면 '정부 종합 민원실의 창구 직원'과 같습니다.**
 여러분이 "파드 하나 만들어줘"라고 요청(kubectl apply)하면, 창구 직원(API Server)이 서류를 검토(인증/인가)하고, 문제가 없으면 이를 장부(etcd)에 기록합니다. 창구 직원이 없으면 아무리 훌륭한 부서(Scheduler, Controller)가 있어도 업무 지시를 내릴 방법이 없습니다.
 
-[Image of Kubernetes API server as a central hub for cluster communication]
-
 ## 2. 핵심 설명
 * **중앙 허브:** 모든 컴포넌트(Scheduler, Controller, Kubelet 등)는 서로 직접 대화하지 않고, 오직 API Server를 통해서만 상태 정보를 주고받습니다.
 * **보안 필터:** 요청이 들어오면 인증(Authentication), 인가(Authorization), 준수 컨트롤(Admission Control) 단계를 거쳐 안전한 요청인지 검토합니다.
