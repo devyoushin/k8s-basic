@@ -60,11 +60,12 @@ k8s-basic/
 | [namespace.md](objects/namespace.md) | Namespace — 클러스터 논리적 분리 |
 | [rbac.md](objects/rbac.md) | RBAC — 역할 기반 접근 제어 |
 
-## objects/ — 스케일링
+## objects/ — 스케일링 & 안정성
 
 | 파일 | 설명 |
 |---|---|
 | [hpa.md](objects/hpa.md) | HPA — 수평적 파드 오토스케일링 |
+| [pdb.md](objects/pdb.md) | PodDisruptionBudget — 자발적 중단 시 최소 가용성 보장 |
 
 ---
 
@@ -98,4 +99,7 @@ k8s-basic/
 | [apiserver-process.md](deep-dive/apiserver-process.md) | API Server 처리 과정 심화 |
 | [container-runtime.md](deep-dive/container-runtime.md) | 컨테이너 런타임 — containerd, CRI, OCI, crictl |
 | [scheduling-advanced.md](deep-dive/scheduling-advanced.md) | 고급 스케줄링 — Taint/Toleration, Affinity, PriorityClass |
+| [resource-management.md](deep-dive/resource-management.md) | 리소스 관리 — QoS 클래스, VPA, Eviction |
+| [observability.md](deep-dive/observability.md) | 관찰 가능성 — 로그(Fluent Bit), 메트릭(Prometheus), 트레이싱 |
+| [admission-control.md](deep-dive/admission-control.md) | Admission Control — Kyverno, OPA Gatekeeper, Webhook |
 | [kubectl-api-resources.md](deep-dive/kubectl-api-resources.md) | kubectl api-resources 전체 목록 |
