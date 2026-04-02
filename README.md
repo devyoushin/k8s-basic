@@ -103,3 +103,6 @@ k8s-basic/
 | [observability.md](deep-dive/observability.md) | 관찰 가능성 — 로그(Fluent Bit), 메트릭(Prometheus), 트레이싱 |
 | [admission-control.md](deep-dive/admission-control.md) | Admission Control — Kyverno, OPA Gatekeeper, Webhook |
 | [kubectl-api-resources.md](deep-dive/kubectl-api-resources.md) | kubectl api-resources 전체 목록 |
+| [rbac-advanced.md](deep-dive/rbac-advanced.md) | RBAC 심화 — Aggregated ClusterRole, OIDC 연동, Audit Policy |
+| [node-affinity-taint.md](deep-dive/node-affinity-taint.md) | Node Affinity & Taint 심화 — 내부 매칭 규칙, GPU 노드 예약, HA 패턴 |
+| [etcd-raft.md](deep-dive/etcd-raft.md) | etcd 심화 — 내부 Key-Value 구조, Raft 알고리즘, 운영 및 복구 |
