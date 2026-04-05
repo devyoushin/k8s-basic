@@ -106,3 +106,26 @@ k8s-basic/
 | [rbac-advanced.md](deep-dive/rbac-advanced.md) | RBAC 심화 — Aggregated ClusterRole, OIDC 연동, Audit Policy |
 | [node-affinity-taint.md](deep-dive/node-affinity-taint.md) | Node Affinity & Taint 심화 — 내부 매칭 규칙, GPU 노드 예약, HA 패턴 |
 | [etcd-raft.md](deep-dive/etcd-raft.md) | etcd 심화 — 내부 Key-Value 구조, Raft 알고리즘, 운영 및 복구 |
+| [apiserver-authn-etcd.md](deep-dive/apiserver-authn-etcd.md) | API Server 인증 심화 — X.509 / SA Token / OIDC 흐름, etcd 저장 구조, Watch 메커니즘 |
+| [containerd-kernel.md](deep-dive/containerd-kernel.md) | containerd & Linux 커널 심화 — Namespace, Cgroup, OverlayFS, Seccomp, Capabilities |
+| [pod-lifecycle.md](deep-dive/pod-lifecycle.md) | 파드 생명주기 심화 — 생성 시퀀스, kubelet Reconcile Loop, Probe 동작, Graceful Shutdown |
+| [controller-informer.md](deep-dive/controller-informer.md) | 컨트롤러 패턴 심화 — Informer, SharedIndexInformer, WorkQueue, Reconcile, Operator 구현 |
+| [network-packet-flow.md](deep-dive/network-packet-flow.md) | 네트워크 패킷 흐름 심화 — veth/브릿지, VXLAN, BGP, iptables DNAT, eBPF/Cilium |
+| [storage-csi.md](deep-dive/storage-csi.md) | CSI 스토리지 심화 — 드라이버 구조, 동적 프로비저닝 흐름, 볼륨 확장, 스냅샷 |
+| [tls-pki.md](deep-dive/tls-pki.md) | TLS & PKI 심화 — 클러스터 인증서 계층, 갱신, cert-manager, mTLS |
+| [garbage-collection-finalizer.md](deep-dive/garbage-collection-finalizer.md) | 가비지 컬렉션 & Finalizer — OwnerReference, GC 알고리즘, Finalizer 패턴, 이미지 GC |
+| [scheduler-internals.md](deep-dive/scheduler-internals.md) | 스케줄러 내부 심화 — 플러그인 파이프라인, Filter/Score 알고리즘, 선점(Preemption) |
+| [oom-eviction.md](deep-dive/oom-eviction.md) | OOM & Eviction 심화 — QoS 클래스, OOM Score, kubelet Eviction Manager, 노드 압박 |
+| [dns-service-discovery.md](deep-dive/dns-service-discovery.md) | DNS & 서비스 디스커버리 심화 — Headless Service, ndots 문제, CoreDNS 설정, ExternalName |
+| [hpa-keda-autoscaling.md](deep-dive/hpa-keda-autoscaling.md) | 오토스케일링 심화 — HPA 알고리즘, VPA, KEDA 이벤트 기반, Cluster Autoscaler |
+| [multitenancy-isolation.md](deep-dive/multitenancy-isolation.md) | 멀티테넌시 & 격리 — ResourceQuota, NetworkPolicy, 노드 격리, vCluster, HNC |
+| [cluster-upgrade.md](deep-dive/cluster-upgrade.md) | 클러스터 업그레이드 — 버전 스큐 정책, kubeadm 절차, 노드 교체 방식, 롤백 |
+| [backup-disaster-recovery.md](deep-dive/backup-disaster-recovery.md) | 백업 & 재해 복구 — etcd 스냅샷, Velero, DR 시나리오별 대응 |
+| [gitops-argocd.md](deep-dive/gitops-argocd.md) | GitOps & ArgoCD — Sync 메커니즘, App of Apps, ApplicationSet, 롤백 |
+| [supply-chain-security.md](deep-dive/supply-chain-security.md) | 공급망 보안 — cosign 이미지 서명, SBOM, SLSA, Kyverno 정책 검증 |
+| [runtime-security-falco.md](deep-dive/runtime-security-falco.md) | 런타임 보안 & Falco — eBPF 이벤트 탐지, 룰 작성, Falcosidekick, 자동 대응 |
+| [gateway-api.md](deep-dive/gateway-api.md) | Gateway API — GatewayClass/Gateway/HTTPRoute 역할 분리, 카나리, GRPCRoute |
+| [node-local-dns.md](deep-dive/node-local-dns.md) | NodeLocal DNSCache — conntrack 경쟁 해결, 노드별 캐시, 성능 측정 |
+| [crd-webhook-development.md](deep-dive/crd-webhook-development.md) | CRD & Webhook 개발 — 스키마 설계, Validating/Mutating Webhook, kubebuilder |
+| [statefulset-patterns.md](deep-dive/statefulset-patterns.md) | StatefulSet 운영 패턴 — volumeClaimTemplate, Primary/Replica 구성, PVC 관리 |
+| [ebpf-observability.md](deep-dive/ebpf-observability.md) | eBPF 관찰 가능성 — Hubble 서비스 맵, Pixie 코드리스 APM, Tetragon 보안 추적 |
