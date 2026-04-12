@@ -129,3 +129,6 @@ k8s-basic/
 | [crd-webhook-development.md](deep-dive/crd-webhook-development.md) | CRD & Webhook 개발 — 스키마 설계, Validating/Mutating Webhook, kubebuilder |
 | [statefulset-patterns.md](deep-dive/statefulset-patterns.md) | StatefulSet 운영 패턴 — volumeClaimTemplate, Primary/Replica 구성, PVC 관리 |
 | [ebpf-observability.md](deep-dive/ebpf-observability.md) | eBPF 관찰 가능성 — Hubble 서비스 맵, Pixie 코드리스 APM, Tetragon 보안 추적 |
+| [deployment-strategy.md](deep-dive/deployment-strategy.md) | 배포 전략 심화 — Rolling/Recreate/Blue-Green/Canary, NLB Unhealthy 원인 분석, Resource Request 증가 시 대응 |
+| [graceful-shutdown.md](deep-dive/graceful-shutdown.md) | Graceful Shutdown & 무중단 배포 — preStop Hook, terminationGracePeriod, Endpoint 전파 지연, Connection Draining |
+| [eks-networking.md](deep-dive/eks-networking.md) | EKS 네트워킹 심화 — VPC CNI/ENI, NLB/ALB 타깃 모드, 보안그룹 파드 연결, IP 소진 대응 |

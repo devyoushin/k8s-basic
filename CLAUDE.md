@@ -10,7 +10,7 @@ k8s-basic/
 ├── objects/      # 쿠버네티스 오브젝트/리소스 (pod, deployment, service 등)
 ├── network/      # 네트워킹 개념 및 기술 (cni, ipvs, network-policy 등)
 ├── security/     # 보안 심화 (security-context, image-security, PSS, secrets 등)
-└── deep-dive/    # 특정 주제 심층 분석 (container-runtime, scheduling 등)
+└── deep-dive/    # 특정 주제 심층 분석 (container-runtime, scheduling, deployment-strategy 등)
 ```
 
 ## 파일 네이밍 규칙
