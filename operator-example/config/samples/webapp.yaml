@@ -1,0 +1,9 @@
+apiVersion: apps.example.com/v1alpha1
+kind: WebApp
+metadata:
+  name: my-webapp
+  namespace: default
+spec:
+  image: nginx:1.25   # 원하는 이미지
+  replicas: 3         # 유지할 파드 수
+  port: 80            # 컨테이너 수신 포트

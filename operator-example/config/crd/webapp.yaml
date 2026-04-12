@@ -1,0 +1,80 @@
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: webapps.apps.example.com
+spec:
+  group: apps.example.com
+  names:
+    kind: WebApp
+    listKind: WebAppList
+    plural: webapps
+    singular: webapp
+    shortNames:
+    - wa      # kubectl get wa 로 축약 가능
+  scope: Namespaced
+  versions:
+  - name: v1alpha1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            required:
+            - image
+            properties:
+              image:
+                type: string
+                description: "실행할 컨테이너 이미지 (예: nginx:latest)"
+              replicas:
+                type: integer
+                minimum: 0
+                maximum: 10
+                default: 1
+                description: "유지할 파드 수"
+              port:
+                type: integer
+                default: 8080
+                description: "컨테이너가 수신할 포트"
+          status:
+            type: object
+            properties:
+              readyReplicas:
+                type: integer
+                description: "현재 Ready 상태인 파드 수"
+              conditions:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                    status:
+                      type: string
+                    reason:
+                      type: string
+                    message:
+                      type: string
+                    lastTransitionTime:
+                      type: string
+                      format: date-time
+                    observedGeneration:
+                      type: integer
+    # kubectl get webapp 시 추가 컬럼 표시
+    additionalPrinterColumns:
+    - name: Image
+      type: string
+      jsonPath: .spec.image
+    - name: Replicas
+      type: integer
+      jsonPath: .spec.replicas
+    - name: Ready
+      type: integer
+      jsonPath: .status.readyReplicas
+    - name: Age
+      type: date
+      jsonPath: .metadata.creationTimestamp
+    subresources:
+      status: {}   # status 서브리소스 활성화 (Status().Update() 사용 가능)

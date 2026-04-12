@@ -132,3 +132,27 @@ k8s-basic/
 | [deployment-strategy.md](deep-dive/deployment-strategy.md) | 배포 전략 심화 — Rolling/Recreate/Blue-Green/Canary, NLB Unhealthy 원인 분석, Resource Request 증가 시 대응 |
 | [graceful-shutdown.md](deep-dive/graceful-shutdown.md) | Graceful Shutdown & 무중단 배포 — preStop Hook, terminationGracePeriod, Endpoint 전파 지연, Connection Draining |
 | [eks-networking.md](deep-dive/eks-networking.md) | EKS 네트워킹 심화 — VPC CNI/ENI, NLB/ALB 타깃 모드, 보안그룹 파드 연결, IP 소진 대응 |
+| [operator-pattern-go.md](deep-dive/operator-pattern-go.md) | Go Operator 패턴 심화 — CRD 타입 정의, Reconcile 루프, OwnerReference, Finalizer, kubebuilder 학습 경로 |
+
+---
+
+## operator-example/ — Go Operator 실습 코드
+
+실제 동작하는 `WebApp` Operator 예제 (controller-runtime 기반)
+
+| 파일 | 설명 |
+|---|---|
+| [main.go](operator-example/main.go) | Manager 초기화, 컨트롤러 등록, 헬스체크 |
+| [api/v1alpha1/webapp_types.go](operator-example/api/v1alpha1/webapp_types.go) | WebApp CRD 타입 정의 (Spec, Status) |
+| [api/v1alpha1/groupversion_info.go](operator-example/api/v1alpha1/groupversion_info.go) | API 그룹/버전 등록 |
+| [controllers/webapp_controller.go](operator-example/controllers/webapp_controller.go) | Reconcile 루프 핵심 로직 |
+| [config/crd/webapp.yaml](operator-example/config/crd/webapp.yaml) | CRD 매니페스트 |
+| [config/samples/webapp.yaml](operator-example/config/samples/webapp.yaml) | 샘플 WebApp CR |
+
+```bash
+# 빠른 실행
+kubectl apply -f operator-example/config/crd/webapp.yaml
+go run operator-example/main.go &
+kubectl apply -f operator-example/config/samples/webapp.yaml
+kubectl get webapp
+```
