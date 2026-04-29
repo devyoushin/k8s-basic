@@ -133,6 +133,7 @@ k8s-basic/
 | [graceful-shutdown.md](deep-dive/graceful-shutdown.md) | Graceful Shutdown & 무중단 배포 — preStop Hook, terminationGracePeriod, Endpoint 전파 지연, Connection Draining |
 | [eks-networking.md](deep-dive/eks-networking.md) | EKS 네트워킹 심화 — VPC CNI/ENI, NLB/ALB 타깃 모드, 보안그룹 파드 연결, IP 소진 대응 |
 | [operator-pattern-go.md](deep-dive/operator-pattern-go.md) | Go Operator 패턴 심화 — CRD 타입 정의, Reconcile 루프, OwnerReference, Finalizer, kubebuilder 학습 경로 |
+| [kubeconfig-authn-flow.md](deep-dive/kubeconfig-authn-flow.md) | kubeconfig 인증 흐름 심화 — .kube/config 구조, kubectl→API Server TLS, API Server→Kubelet mTLS, EKS IAM 인증(aws-iam-authenticator), Bastion 권한 요건 |
 
 ---
 
