@@ -94,8 +94,4 @@ k8s-basic/
 
 ## 백로그 (추가 예정)
 
-- `objects/taint-toleration.md` — ✅ 완료 (Taint & Toleration)
-- `objects/vpa.md` — Vertical Pod Autoscaler
-- `network/ebpf-cilium.md` — eBPF 기반 CNI
-- `security/falco.md` — 런타임 보안 감지
-- `deep-dive/etcd-backup.md` — etcd 백업 및 복구
+현재 추가 예정 항목 없음.
