@@ -50,7 +50,57 @@ spec:
       periodSeconds: 5
 ```
 
-## 4. 트러블 슈팅
+## 4. 클러스터 밖에서 Probe 확인하기
+
+Probe는 Kubelet이 노드 안에서 실행하지만, HTTP endpoint라면 로컬 PC에서 `kubectl port-forward` 후 `curl`로 같은 경로를 직접 확인할 수 있습니다.
+
+### 특정 Pod의 readiness/liveness endpoint 직접 확인
+
+```bash
+# Pod 이름과 포트 확인
+kubectl get pods -n default -l app=web -o wide
+kubectl describe pod -n default web-server
+
+# 로컬 18080 포트를 Pod의 80 포트로 연결
+kubectl port-forward -n default pod/web-server 18080:80
+
+# 다른 터미널에서 readiness/liveness 경로 호출
+curl -i http://localhost:18080/ready
+curl -i http://localhost:18080/healthz
+```
+
+* `200 OK`가 나오면 해당 HTTP probe 경로는 성공입니다.
+* `404`, `500`, timeout이면 probe의 `path`, `port`, 앱 라우팅, 앱 시작 시간을 확인해야 합니다.
+* Pod가 `Ready`가 아니어도 `pod/<파드명>`으로 port-forward하면 해당 Pod의 endpoint를 직접 확인할 수 있습니다.
+
+### Service 기준으로 외부에서 확인
+
+Service가 실제 트래픽을 보낼 수 있는지 보려면 Service로 port-forward 하거나, NodePort/LoadBalancer 주소로 확인합니다.
+
+```bash
+# ClusterIP Service를 로컬에서 확인
+kubectl port-forward -n default service/web-svc 18080:80
+curl -i http://localhost:18080/ready
+
+# NodePort Service 예시
+curl -i http://<노드IP>:30080/ready
+
+# LoadBalancer Service 예시
+curl -i http://<EXTERNAL-IP>/ready
+```
+
+readinessProbe가 실패한 Pod는 Service 엔드포인트에서 제외됩니다. 따라서 Service로는 정상 Pod만 보일 수 있고, 실패 중인 특정 Pod를 확인하려면 `pod/<파드명>`으로 port-forward 해야 합니다.
+
+### Kubernetes가 보는 Probe 실패 확인
+
+```bash
+kubectl describe pod -n default web-server
+kubectl get events -n default --sort-by=.lastTimestamp
+```
+
+`Readiness probe failed` 또는 `Liveness probe failed` 이벤트의 HTTP status, timeout, connection refused 메시지를 보고 실제 `curl` 결과와 비교하세요.
+
+## 5. 트러블 슈팅
 * **파드가 `CrashLoopBackOff` 상태:**
   * 컨테이너가 계속 죽어서 재시작되는 상태입니다. `kubectl logs <파드명> --previous` 로 이전 컨테이너 로그를 확인하세요.
   * `livenessProbe` 설정이 너무 공격적이거나, 앱 내부 오류일 수 있습니다.
