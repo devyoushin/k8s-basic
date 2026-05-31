@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: oomkill-lab
+spec:
+  restartPolicy: Never
+  containers:
+    - name: memory
+      image: python:3.12-alpine
+      command:
+        - python
+        - -c
+        - |
+          data = []
+          while True:
+              data.append("x" * 1024 * 1024)
+      resources:
+        requests:
+          memory: 32Mi
+          cpu: 10m
+        limits:
+          memory: 64Mi
+          cpu: 100m

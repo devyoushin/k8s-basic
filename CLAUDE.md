@@ -37,7 +37,15 @@ k8s-basic/
 ├── network/                   # 네트워킹 개념 및 기술
 ├── security/                  # 보안 심화
 ├── docs/deep-dive/                 # 특정 주제 심층 분석
-└── ops/operator-example/          # Go로 작성한 실제 동작 Operator 예제
+└── ops/
+    ├── scripts/                  # kubectl 기반 진단 스크립트
+    ├── manifests/                # 기본 리소스 YAML 예제
+    ├── labs/                     # 재현 가능한 실습 절차
+    ├── runbooks/                 # 장애 상황별 대응 절차
+    ├── checklists/               # 운영 점검 체크리스트
+    ├── configs/                  # kind, kubectl 설정 예시
+    ├── outputs/                  # 실습 결과 샘플
+    └── operator-example/         # Go로 작성한 실제 동작 Operator 예제
 ```
 
 ---
