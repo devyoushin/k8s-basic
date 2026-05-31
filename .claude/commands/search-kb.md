@@ -5,7 +5,7 @@ description: K8s 지식 베이스에서 키워드를 검색합니다. 사용법:
 `$ARGUMENTS` 키워드로 지식 베이스를 검색합니다.
 
 ## 검색 범위
-- `components/`, `objects/`, `network/`, `security/`, `deep-dive/` 전체 마크다운 파일
+- `docs/components/`, `docs/objects/`, `network/`, `security/`, `docs/deep-dive/` 전체 마크다운 파일
 
 ## 검색 방법
 1. 파일명에서 키워드 매칭

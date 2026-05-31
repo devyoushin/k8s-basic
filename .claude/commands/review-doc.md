@@ -15,7 +15,7 @@ description: 기존 K8s 문서를 검토하고 개선점을 제안합니다. 사
 - [ ] kubectl 예시가 실행 가능한 수준인지
 - [ ] 플레이스홀더가 `<VALUE>` 형식으로 명확히 표시됐는지
 
-### 3. 보안 검토 (`rules/security-checklist.md` 기준)
+### 3. 보안 검토 (`docs/rules/security-checklist.md` 기준)
 - [ ] 과도한 권한(cluster-admin 등) 예시에 주의 문구 있는지
 - [ ] Secret을 평문으로 노출하지 않는지
 

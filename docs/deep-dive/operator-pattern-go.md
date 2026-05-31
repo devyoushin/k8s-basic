@@ -5,7 +5,7 @@
 💡 **비유하자면 '자동 운영 매니저'와 같습니다.**
 숙련된 시스템 운영자(Operator)가 하던 일 — "DB Primary가 죽으면 Replica를 Primary로 승격시켜라", "파드가 3개 미만이면 즉시 알림을 보내라" — 를 코드로 자동화합니다.
 
-> 이 문서에 대응하는 실제 Go 코드: [`operator-example/`](../operator-example/)
+> 이 문서에 대응하는 실제 Go 코드: [`operator-example/`](../../ops/operator-example/)
 
 ---
 

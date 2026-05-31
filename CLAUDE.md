@@ -18,26 +18,26 @@ k8s-basic/
 │       ├── review-doc.md      # /review-doc — 문서 품질 검토
 │       ├── add-troubleshooting.md  # /add-troubleshooting — 트러블슈팅 추가
 │       └── search-kb.md       # /search-kb — 지식베이스 검색
-├── agents/                    # 전문 에이전트 정의
+├── docs/agents/                    # 전문 에이전트 정의
 │   ├── doc-writer.md          # K8s 문서 작성 전문가
 │   ├── troubleshooter.md      # 장애 진단 전문가
 │   ├── yaml-reviewer.md       # YAML 검토 전문가
 │   └── operator-advisor.md    # Operator 패턴 전문가
-├── templates/                 # 문서 템플릿
+├── docs/templates/                 # 문서 템플릿
 │   ├── service-doc.md         # 서비스/컴포넌트 문서 템플릿
 │   ├── runbook.md             # 운영 런북 템플릿
 │   └── incident-report.md     # 장애 보고서 템플릿
-├── rules/                     # Claude 작성 규칙
+├── docs/rules/                     # Claude 작성 규칙
 │   ├── doc-writing.md         # 문서 작성 원칙
 │   ├── k8s-conventions.md     # K8s 표준 관행
 │   ├── security-checklist.md  # 보안 체크리스트
 │   └── monitoring.md          # 모니터링 지침
-├── components/                # 클러스터 구성 컴포넌트
-├── objects/                   # 쿠버네티스 오브젝트/리소스
+├── docs/components/                # 클러스터 구성 컴포넌트
+├── docs/objects/                   # 쿠버네티스 오브젝트/리소스
 ├── network/                   # 네트워킹 개념 및 기술
 ├── security/                  # 보안 심화
-├── deep-dive/                 # 특정 주제 심층 분석
-└── operator-example/          # Go로 작성한 실제 동작 Operator 예제
+├── docs/deep-dive/                 # 특정 주제 심층 분석
+└── ops/operator-example/          # Go로 작성한 실제 동작 Operator 예제
 ```
 
 ---
@@ -46,9 +46,9 @@ k8s-basic/
 
 | 명령어 | 설명 | 사용 예시 |
 |--------|------|---------|
-| `/new-doc` | 새 K8s 문서 생성 | `/new-doc objects/hpa` |
+| `/new-doc` | 새 K8s 문서 생성 | `/new-doc docs/objects/hpa` |
 | `/new-runbook` | 새 런북 생성 | `/new-runbook 노드 드레인` |
-| `/review-doc` | 문서 품질 검토 | `/review-doc objects/pod.md` |
+| `/review-doc` | 문서 품질 검토 | `/review-doc docs/objects/pod.md` |
 | `/add-troubleshooting` | 트러블슈팅 케이스 추가 | `/add-troubleshooting CrashLoopBackOff` |
 | `/search-kb` | 지식베이스 검색 | `/search-kb HPA 스케일링` |
 
@@ -56,7 +56,7 @@ k8s-basic/
 
 ## 파일 네이밍 규칙
 - 폴더 내 파일명은 **리소스/컴포넌트 이름만** 사용합니다. 접두사 불필요.
-- 예: `objects/pod.md`, `components/apiserver.md`, `network/cni-service-proxy.md`
+- 예: `docs/objects/pod.md`, `docs/components/apiserver.md`, `network/cni-service-proxy.md`
 - 복합 개념은 하이픈으로 연결: `pv-pvc.md`, `cni-service-proxy.md`
 
 ---
