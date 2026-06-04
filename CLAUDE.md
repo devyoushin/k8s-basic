@@ -33,6 +33,7 @@ k8s-basic/
 │   ├── security-checklist.md  # 보안 체크리스트
 │   └── monitoring.md          # 모니터링 지침
 ├── docs/components/                # 클러스터 구성 컴포넌트
+├── docs/install/                   # kubeadm, Kubespray, external etcd, upgrade
 ├── docs/objects/                   # 쿠버네티스 오브젝트/리소스
 ├── network/                   # 네트워킹 개념 및 기술
 ├── security/                  # 보안 심화
@@ -43,7 +44,7 @@ k8s-basic/
     ├── labs/                     # 재현 가능한 실습 절차
     ├── runbooks/                 # 장애 상황별 대응 절차
     ├── checklists/               # 운영 점검 체크리스트
-    ├── configs/                  # kind, kubectl 설정 예시
+    ├── configs/                  # kubeadm, Kubespray, kind, kubectl 설정 예시
     ├── outputs/                  # 실습 결과 샘플
     └── operator-example/         # Go로 작성한 실제 동작 Operator 예제
 ```
@@ -64,7 +65,7 @@ k8s-basic/
 
 ## 파일 네이밍 규칙
 - 폴더 내 파일명은 **리소스/컴포넌트 이름만** 사용합니다. 접두사 불필요.
-- 예: `docs/objects/pod.md`, `docs/components/apiserver.md`, `network/cni-service-proxy.md`
+- 예: `docs/objects/pod.md`, `docs/components/apiserver.md`, `docs/install/kubeadm.md`, `network/cni-service-proxy.md`
 - 복합 개념은 하이픈으로 연결: `pv-pvc.md`, `cni-service-proxy.md`
 
 ---

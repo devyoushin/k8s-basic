@@ -4,6 +4,7 @@ Kubernetes 학습 문서는 주제별로 나눠 관리합니다.
 
 | 폴더 | 내용 |
 |------|------|
+| `install/` | kubeadm, Kubespray, external etcd, 업그레이드 절차 |
 | `components/` | API Server, etcd, Scheduler, Controller Manager, Kubelet, Kube Proxy |
 | `objects/` | Pod, Deployment, Service, Ingress, RBAC, PV/PVC 등 Kubernetes 리소스 |
 | `network/` | CNI, CoreDNS, IPVS, NetworkPolicy, Service Mesh |

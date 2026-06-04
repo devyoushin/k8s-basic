@@ -9,7 +9,7 @@ Kubernetes 실습 코드와 실행 자산은 이 디렉터리에서 관리합니
 | `labs/` | DNS, scheduling, rollout, resource, storage 실습 |
 | `runbooks/` | Kubernetes 장애 상황별 대응 절차 |
 | `checklists/` | 클러스터/배포/보안 점검 체크리스트 |
-| `configs/` | kind, kubectl, plugin 설정 예시 |
+| `configs/` | kubeadm, Kubespray, kind, kubectl, plugin 설정 예시 |
 | `outputs/` | 실습 결과와 kubectl 출력 샘플 |
 | `operator-example/` | controller-runtime 기반 Go Operator 예제 |
 
