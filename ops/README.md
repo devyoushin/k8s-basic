@@ -22,6 +22,7 @@ bash ops/scripts/cluster-summary.sh
 bash ops/scripts/node-summary.sh
 bash ops/scripts/workload-summary.sh
 bash ops/scripts/events-recent.sh
+bash ops/scripts/efs-pod-map.sh
 ```
 
 스크립트는 기본적으로 조회 전용입니다. 실제 리소스를 생성하는 실습은 `ops/manifests/`와 `ops/labs/`에서 별도로 관리합니다.
